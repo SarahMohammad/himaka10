@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="17.067" height="16" viewBox="0 0 17.067 16">
+  <g id="id" transform="translate(0 -16)">
+    <g id="Group_624" data-name="Group 624" transform="translate(0 20)">
+      <g id="Group_623" data-name="Group 623">
+        <path id="Path_842" data-name="Path 842" d="M13.567,140a4.49,4.49,0,0,1-4.449-4H1.5A1.5,1.5,0,0,0,0,137.5v9A1.5,1.5,0,0,0,1.5,148H14.567a1.5,1.5,0,0,0,1.5-1.5v-7.262A4.473,4.473,0,0,1,13.567,140Zm-2,1a.5.5,0,1,1-.5.5A.5.5,0,0,1,11.567,141Zm-2,0a.5.5,0,1,1-.5.5A.5.5,0,0,1,9.567,141Zm4,5h-4a.5.5,0,0,1,0-1h4a.5.5,0,0,1,0,1Zm0-2h-4a.5.5,0,0,1,0-1h4a.5.5,0,0,1,0,1Zm0-2a.5.5,0,1,1,.5-.5A.5.5,0,0,1,13.567,142Z" transform="translate(0 -136)" fill="#555"/>
+      </g>
+    </g>
+    <g id="Group_626" data-name="Group 626" transform="translate(3.5 24)">
+      <g id="Group_625" data-name="Group 625">
+        <path id="Path_843" data-name="Path 843" d="M106,256a1,1,0,1,0,1,1A1,1,0,0,0,106,256Z" transform="translate(-105 -256)" fill="#555"/>
+      </g>
+    </g>
+    <g id="Group_630" data-name="Group 630" transform="translate(10.067 16)">
+      <g id="Group_629" data-name="Group 629">
+        <path id="Path_845" data-name="Path 845" d="M305.467,16A3.5,3.5,0,1,0,309,19.5,3.533,3.533,0,0,0,305.467,16Zm1.887,2.854-2,2a.5.5,0,0,1-.707,0l-1-1a.5.5,0,0,1,.707-.707l.646.646,1.646-1.646a.5.5,0,1,1,.707.707Z" transform="translate(-302 -16)" fill="#555"/>
+      </g>
+    </g>
+  </g>
+</svg>

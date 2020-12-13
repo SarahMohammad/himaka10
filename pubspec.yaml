@@ -1,0 +1,160 @@
+name: himaka
+description: A new Flutter application.
+
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+
+  # The following adds the Cupertino Icons font to your application.
+  # Use with the CupertinoIcons class for iOS style icons.
+  cupertino_icons: ^0.1.3
+  intl_phone_number_input: ^0.5.1
+  flutter_svg: ^0.19.0
+  http: ^0.12.0+2
+  get_it: ^1.0.3
+  provider: ^4.3.1
+  shared_preferences: ^0.5.6+1
+  dio: ^3.0.9
+  fluttertoast: ^3.1.3
+  carousel_pro: ^1.0.0
+#  carousel_slider: ^2.3.1
+  cached_network_image: 2.0.0-rc
+  smooth_star_rating: 1.1.1
+  chips_choice: ^1.2.0
+  rflutter_alert: ^1.0.2
+  rect_getter: ^0.1.0
+  flutter_range_slider: "^1.5.0"
+  cloud_firestore: ^0.13.0+1
+  firebase_storage: ^3.1.5
+
+
+  image_cropper: ^1.2.2
+  firebase_messaging: ^6.0.13
+  flutter_local_notifications: ^1.4.3
+
+  flutter_app_badger: ^1.1.2
+  flutter_widgets: ^0.1.7+1
+  image_picker: ^0.6.7+12
+  photo_view: ^0.9.2
+  pretty_dio_logger: ^1.1.1
+
+  multipart_request: ^0.3.1
+  flutter_secure_storage: ^3.3.5
+  animated_splash: ^1.0.0
+  badges: ^1.1.4
+
+  flutter_localizations:
+    sdk: flutter
+
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+# For information on the generic Dart part of this file, see the
+# following page: https://dart.dev/tools/pub/pubspec
+
+# The following section is specific to Flutter.
+flutter:
+
+  uses-material-design: true
+
+
+  assets:
+     - images/blur_bg.jpg
+     - images/logo.png
+     - images/icon_mail.svg
+     - images/icon_padlock.svg
+     - images/icon_person.svg
+     - images/icon_code.svg
+     - images/icon_answers.svg
+     - i18n/ar.json
+     - i18n/en.json
+     - images/icon_money.svg
+     - images/icon_desc.svg
+     - images/subscription.svg
+     - images/Badge.svg
+     - images/box_list.svg
+     - images/Component6.svg
+     - images/component34.svg
+     - images/component40.svg
+     - images/group160.svg
+     - images/icon_earning.svg
+     - images/Layer_2.svg
+     - images/Layer_5.svg
+     - images/page_1.svg
+     - images/plus.svg
+     - images/icon_task.svg
+     - images/icon_phone.svg
+     - images/icon_general.svg
+     - images/icon_location.svg
+     - images/no_items_cart.svg
+     - images/no_fav.svg
+     - images/cash_out.svg
+     - images/commission_gift.svg
+     - images/commission_member_icon.svg
+     - images/commission_convert_img.svg
+     - images/chat.svg
+     - images/earning_wallet_cash_out.svg
+     - images/upgrade_calender.svg
+     - images/close.svg
+     - images/personal_wallet_order.svg
+     - images/no_rewards.svg
+     - images/personal_recent_wrong.svg
+     - images/personal_recent.svg
+     - images/personal_recent_right.svg
+     - images/upgrade.png
+     - images/icon_nationalid.svg
+     - images/icon_wallet.svg
+     - images/icon_home.svg
+     - images/icon_idea.svg
+     - images/icon_settings.svg
+     - images/icon_list.svg
+     - images/icon_add.svg
+     - images/icon_minus.svg
+     - images/icon_cart_appbar.svg
+     - images/icon_fav_appbar.svg
+     - images/icon_edit.svg
+     - images/icon_profile.svg
+     - images/filter.svg
+     - images/icon_person_profile.svg
+     - images/icon_fav_grey.svg
+     - images/icon_fav_blue.svg
+     - images/icon_pricetag.svg
+     - images/icon_cart_red.svg
+     - images/special_offer.svg
+     - images/icon_special_price.svg
+     - images/icon_delivery.svg
+     - images/icon_return.svg
+     - images/send_himaka.svg
+     - images/filter.svg
+     - images/cart_remove_icon.svg
+     - images/bg.jpg
+     - images/your_order.svg
+     - images/or_client.svg
+     - images/complians.svg
+     - images/history.svg
+     - images/personal_wallet_history.svg
+     - images/arrow_bottom_left.svg
+     - images/arrow_up_right.svg
+
+
+  fonts:
+     - family: balance
+       fonts:
+         - asset: assets/Balance-Regular.otf
+     - family: roboto
+       fonts:
+         - asset: assets/Roboto-Regular.ttf
+
+  # For details regarding fonts from package dependencies,
+  # see https://flutter.dev/custom-fonts/#from-packages

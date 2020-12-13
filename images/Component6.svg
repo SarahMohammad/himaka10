@@ -1,0 +1,13 @@
+<svg id="Component_6" data-name="Component 6" xmlns="http://www.w3.org/2000/svg" width="12" height="13.333" viewBox="0 0 12 13.333">
+  <g id="Rectangle_1550" data-name="Rectangle 1550" transform="translate(0 1.465)" fill="none" stroke="#9e9e9e" stroke-width="1">
+    <rect width="12" height="11.868" rx="3" stroke="none"/>
+    <rect x="0.5" y="0.5" width="11" height="10.868" rx="2.5" fill="none"/>
+  </g>
+  <line id="Line_33" data-name="Line 33" x2="11.077" transform="translate(0.231 5.201)" fill="none" stroke="#9e9e9e" stroke-width="1"/>
+  <path id="Path_100" data-name="Path 100" d="M0,2.125V0" transform="translate(8.294)" fill="none" stroke="#9e9e9e" stroke-width="1"/>
+  <path id="Path_101" data-name="Path 101" d="M0,2.125V0" transform="translate(3.462)" fill="none" stroke="#9e9e9e" stroke-width="1"/>
+  <g id="Rectangle_1551" data-name="Rectangle 1551" transform="translate(6.923 8.498)" fill="none" stroke="#9e9e9e" stroke-width="1">
+    <rect width="3.231" height="3.077" rx="1.538" stroke="none"/>
+    <rect x="0.5" y="0.5" width="2.231" height="2.077" rx="1.038" fill="none"/>
+  </g>
+</svg>

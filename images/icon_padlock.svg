@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="15.447" height="17.023" viewBox="0 0 15.447 17.023">
+  <g id="icon-padlock" transform="translate(0.5 0.5)">
+    <path id="path" d="M408.447,606v3.607a2.893,2.893,0,0,1-2.894,2.894h-8.66A2.893,2.893,0,0,1,394,609.607V606" transform="translate(-394 -596.479)" fill="none" stroke="#46b2e5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <path id="path-2"  d="M394,601.034a2.893,2.893,0,0,1,2.894-2.893h8.66a2.893,2.893,0,0,1,2.894,2.893" transform="translate(-394 -594.297)" fill="none" stroke="#46b2e5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <circle id="ellipse" cx="1.454" cy="1.454" r="1.454" stroke-width="1" transform="translate(5.769 7.344)" stroke="#46b2e5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <path id="path-3"  d="M399.421,596.126a3.308,3.308,0,0,1,6.615,0" transform="translate(-395.505 -592.819)" fill="none" stroke="#46b2e5" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+    <line id="line" y2="1.664" stroke-width="1" transform="translate(7.224 10.252)" stroke="#46b2e5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  </g>
+</svg>
