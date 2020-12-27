@@ -286,7 +286,7 @@ class _FirstHomeScreenState extends State<FirstHomeScreen> {
                                                                           model
                                                                               .productsList[index]
                                                                               .id,
-                                                                          0)));
+                                                                          1)));
 
 //                                    Navigator.pushNamed(
 //                                        context, '/products',

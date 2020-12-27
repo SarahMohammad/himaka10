@@ -9,7 +9,6 @@ import 'package:himaka/Models/cart.dart';
 import 'package:himaka/Models/product_service_details_response.dart';
 import 'package:himaka/ViewModels/banner_products_view_model.dart';
 import 'package:himaka/ViewModels/base_model.dart';
-import 'package:himaka/ViewModels/home_view_model.dart';
 import 'package:himaka/services/base_view.dart';
 import 'package:himaka/utils/app_localizations.dart';
 import 'package:himaka/utils/show_toast.dart';
@@ -109,7 +108,7 @@ class _BannerDetailsScreenState extends State<BannerDetailsScreen> {
                                                                       .products[
                                                                           index]
                                                                       .id,
-                                                                  0)));
+                                                                  1)));
 
 //                                                      Navigator.pushNamed(
 //                                                          context, '/products',

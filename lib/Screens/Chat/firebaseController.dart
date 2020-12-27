@@ -54,7 +54,8 @@ class FirebaseController {
       SharedPreferences prefs = await SharedPreferences.getInstance();
       final QuerySnapshot result = await Firestore.instance
           .collection('users')
-          .where('FCMToken', isEqualTo: prefs.get('FCMToken'))
+          .where("userId", isEqualTo: userId)
+//          .where('FCMToken', isEqualTo: prefs.get('FCMToken'))
           .getDocuments();
 
       final List<DocumentSnapshot> documents = result.documents;

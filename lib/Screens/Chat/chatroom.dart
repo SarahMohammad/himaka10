@@ -6,7 +6,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_widgets/flutter_widgets.dart';
 import 'package:himaka/Screens/Chat/pickImageController.dart';
 import 'package:himaka/Screens/Chat/utils.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+import 'package:himaka/Screens/order_details.dart';
+import 'package:himaka/utils/app_localizations.dart';
+import 'package:himaka/utils/globals.dart';
+import 'package:himaka/utils/show_toast.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
 import 'firebaseController.dart';
 import 'fullphoto.dart';
@@ -84,7 +88,6 @@ class _ChatRoomState extends State<ChatRoom> {
                 ),
                 onPressed: () {
                   Navigator.pop(context);
-
                 })
           ],
           bottom: PreferredSize(
@@ -103,7 +106,9 @@ class _ChatRoomState extends State<ChatRoom> {
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: <Widget>[
                                 InkWell(
-                                  onTap: () {},
+                                  onTap: () {
+                                    cancelDialog(context);
+                                  },
                                   child: Container(
                                       width:
                                           MediaQuery.of(context).size.width / 2,
@@ -124,30 +129,57 @@ class _ChatRoomState extends State<ChatRoom> {
                                       )),
                                 ),
                                 InkWell(
-                                  onTap: () {},
+                                  onTap: () {
+                                    acceptDialog(context);
+                                  },
                                   child: Container(
-                                      width:
-                                          MediaQuery.of(context).size.width / 2,
-                                      padding: EdgeInsets.all(14.0),
-                                      margin: EdgeInsets.all(0.0),
-                                      color: Colors.green,
-                                      child: Padding(
-                                        padding: const EdgeInsets.symmetric(
-                                            horizontal: 0.0),
-                                        child: Center(
-                                          child: Text(
-                                            "Accept",
-                                            style:
-                                                TextStyle(color: Colors.white),
-                                            textAlign: TextAlign.center,
-                                          ),
+                                    width:
+                                        MediaQuery.of(context).size.width / 2,
+                                    padding: EdgeInsets.all(14.0),
+                                    margin: EdgeInsets.all(0.0),
+                                    color: Colors.green,
+                                    child: Padding(
+                                      padding: const EdgeInsets.symmetric(
+                                          horizontal: 0.0),
+                                      child: Center(
+                                        child: Text(
+                                          "Accept",
+                                          style: TextStyle(color: Colors.white),
+                                          textAlign: TextAlign.center,
                                         ),
-                                      )),
+                                      ),
+                                    ),
+                                  ),
                                 ),
                               ],
                             );
                           })
-                      : Container(),
+                      : InkWell(
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) =>
+                                        OrderDetailsScreen(2)));
+                          },
+                          child: Container(
+                            width: MediaQuery.of(context).size.width,
+                            padding: EdgeInsets.all(0.0),
+                            margin: EdgeInsets.all(0.0),
+                            color: Colors.green,
+                            child: Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(horizontal: 0.0),
+                              child: Center(
+                                child: Text(
+                                  "Accept service provider offer",
+                                  style: TextStyle(color: Colors.white),
+                                  textAlign: TextAlign.center,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
                 ),
               ),
               preferredSize: const Size.fromHeight(90.0)),
@@ -275,17 +307,17 @@ class _ChatRoomState extends State<ChatRoom> {
                         _buildTextComposer(),
                       ],
                     ),
-//                Positioned(
-//                  // Loading view in the center.
-//                  child: _isLoading
-//                      ? Container(
-//                    child: Center(
-//                      child: CircularProgressIndicator(),
-//                    ),
-//                    color: Colors.white.withOpacity(0.7),
-//                  )
-//                      : Container(),
-//                ),
+                    Positioned(
+                      // Loading view in the center.
+                      child: _isLoading
+                          ? Container(
+                              child: Center(
+                                child: CircularProgressIndicator(),
+                              ),
+                              color: Colors.white.withOpacity(0.7),
+                            )
+                          : Container(),
+                    ),
                   ],
                 );
               }),
@@ -556,6 +588,21 @@ class _ChatRoomState extends State<ChatRoom> {
     }
   }
 
+  Future<void> _handleAccepted(String text) async {
+    try {
+      setState(() {
+        _isLoading = true;
+      });
+      await FirebaseController.instanace.sendMessageToChatRoom(
+          widget.chatID, widget.myID, widget.selectedUserID, text, messageType);
+
+      _getUnreadMSGCountThenSendMessage();
+    } catch (e) {
+      _showDialog('Error user information to database');
+      _resetTextFieldAndLoading();
+    }
+  }
+
   Future<void> _getUnreadMSGCountThenSendMessage() async {
     try {
       int unReadMSGCount = await FirebaseController.instanace
@@ -572,6 +619,108 @@ class _ChatRoomState extends State<ChatRoom> {
       print(e.message);
     }
     _resetTextFieldAndLoading();
+  }
+
+  Future<void> acceptDialog(context) async {
+    TextEditingController valueKeyController = new TextEditingController();
+    Alert(
+        title: '',
+        type: AlertType.none,
+        context: context,
+        content: Column(
+          children: <Widget>[
+            Text("Enter the value that you agreed on"),
+            SizedBox(
+              height: 6,
+            ),
+            TextField(
+              controller: valueKeyController,
+              decoration: InputDecoration(
+                labelStyle: TextStyle(color: Colors.black38),
+                hintStyle: TextStyle(color: Colors.black38),
+                labelText: AppLocalizations.of(context).translate('value'),
+                hintText: AppLocalizations.of(context).translate('value'),
+                border: OutlineInputBorder(
+                  gapPadding: 0.0,
+                  borderRadius: BorderRadius.circular(1.5),
+                ),
+              ),
+            ),
+          ],
+        ),
+        buttons: [
+          DialogButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text(
+              AppLocalizations.of(context).translate('cancel'),
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+            color: Colors.grey,
+          ),
+          DialogButton(
+            onPressed: () {
+              if (valueKeyController.text.isNotEmpty) {
+                //close dialog and change the value on user
+                setState(() {
+                  messageType = 'text';
+                });
+                _handleAccepted('* The value agreed on is ' +
+                    valueKeyController.text +
+                    ' *');
+              } else {
+                showToast("Enter the value", Colors.red);
+              }
+            },
+            child: Text(
+              AppLocalizations.of(context).translate('ok'),
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+            color: Colors.green,
+          )
+        ]).show();
+  }
+
+  Future<void> cancelDialog(context) async {
+    Alert(
+        title: '',
+        type: AlertType.none,
+        context: context,
+        content: Column(
+          children: <Widget>[
+            Text(
+              "When you cancel the agreement will not be concluded",
+              textAlign: TextAlign.center,
+            ),
+            SizedBox(
+              height: 6,
+            ),
+          ],
+        ),
+        buttons: [
+          DialogButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: Text(
+              AppLocalizations.of(context).translate('cancel'),
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+            color: Colors.grey,
+          ),
+          DialogButton(
+            onPressed: () {
+              Navigator.pop(context);
+              Navigator.pop(context);
+            },
+            child: Text(
+              AppLocalizations.of(context).translate('ok'),
+              style: TextStyle(color: Colors.white, fontSize: 20),
+            ),
+            color: Colors.red,
+          )
+        ]).show();
   }
 
   _resetTextFieldAndLoading() {
